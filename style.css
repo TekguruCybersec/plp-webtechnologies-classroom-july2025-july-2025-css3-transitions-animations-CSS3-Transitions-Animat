@@ -1,0 +1,57 @@
+/* --- Basic Styling --- */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#animation-section {
+    text-align: center;
+}
+
+/* --- The Animated Box --- */
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    margin: 20px auto;
+    /* Apply a transition for smooth color change */
+    transition: background-color 0.5s ease;
+}
+
+/* --- Keyframe Animation --- */
+/* A keyframe animation to make the box spin and change size */
+@keyframes pulseAndSpin {
+    0% {
+        transform: scale(1) rotate(0deg);
+        background-color: #3498db;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        background-color: #e74c3c;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        background-color: #3498db;
+    }
+}
+
+/* --- Animation Trigger Class --- */
+/* This class will be added/removed by JavaScript to trigger the animation */
+.trigger-animation {
+    /* Apply the keyframe animation */
+    animation-name: pulseAndSpin;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3; /* Run the animation 3 times */
+}
+
+/* --- Button Styling --- */
+#animate-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
